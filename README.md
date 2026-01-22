@@ -4,7 +4,7 @@ Acest README.md conține prezentarea generală a structurii arhivei. Acest READM
 3. Surse externe și referințe
 4. Detaliera individuală a alegerii testelor
 
-		Prezentarea conținutul arhivei
+		Prezentarea conținutul repositoriului
 
 Prezenta arhivă conține o implementare completă pentru rezolvarea Problemei Comis-voiajorului (TSP), 
 incluzând atât o soluție exactă, cât și o soluție aproximativă. Structura proiectului este următoarea:
@@ -19,61 +19,61 @@ incluzând atât o soluție exactă, cât și o soluție aproximativă. Structur
 	- Bibliografie
 
 2. Directorul src/
-a. Makefile
-	Acest fișier reprezintă sistemul de build și automatizare definește următoarele reguli esențiale:
-		- all: compilează ambele soluții (exactă și aproximativă)
-		- TSP_exact și TSP_approx: reguli individuale pentru construcția fiecărui executabil
-		- clean: șterge executabilele și conținutul folderelor output_exact și output_approx din
-				 directorul tests/, păstrând structura directoarelor
-		- clean-tests: Șterge complet toate testele generate, inclusiv fișierele de input și output-urile
-					   asociate
-		- test: Rulează întreaga suită de teste utilizând scriptul run_tests.sh situat în directorul tests/
-		- generate-tests: Generează automat testele de intrare folosind scriptul Python din directorul tests/
-
-b. TSP_exact.c
-		Acest fișier reprezintă soluția care obține întotdeauna rezultatul corect utilizând algoritmul Held-Karp
-	(Dynamic Programming with Bitmasking), care garantează găsirea ciclului Hamiltonian de cost minim pentru
-	grafuri complete cu până la 20 de noduri. Acest algoritm are complexitatea O(n²·2ⁿ), oferind soluția optimă
-	într-un timp rezonabil pentru instanțe de dimensiuni moderate.
-
-c. TSP_approx.c
-	Acest fișier reprezintă soluția care obține un răspuns apropiat de cel corect și consumă o cantitate
-	rezonabilă de resurse (spațiu/timp) pentru orice instanță a problemei. Este o implementare hibridă care
-	combină mai multe tehnici:
-		- Verificare existență ciclu Hamiltonian: Folosește DFS pentru a detecta dacă graful conține un ciclu
-												  Hamiltonian
-		- Algoritmi de construcție:
-					~ Nearest Neighbor: construiește un tur pornind de la un nod și adăugând mereu cel mai apropiat
-										nod nevizitat
-					~ Simple Insertion: inserează noduri în turul curent în poziția care minimizează creșterea
-										costului
-		- Algoritmul de optimizare 2-OPT: îmbunătățește soluția inițială prin schimbarea sistematică a muchiilor
-										  pentru reducerea costului total
+	a. Makefile
+		Acest fișier reprezintă sistemul de build și automatizare definește următoarele reguli esențiale:
+			- all: compilează ambele soluții (exactă și aproximativă)
+			- TSP_exact și TSP_approx: reguli individuale pentru construcția fiecărui executabil
+			- clean: șterge executabilele și conținutul folderelor output_exact și output_approx din
+					 directorul tests/, păstrând structura directoarelor
+			- clean-tests: Șterge complet toate testele generate, inclusiv fișierele de input și output-urile
+						   asociate
+			- test: Rulează întreaga suită de teste utilizând scriptul run_tests.sh situat în directorul tests/
+			- generate-tests: Generează automat testele de intrare folosind scriptul Python din directorul tests/
+	
+	b. TSP_exact.c
+			Acest fișier reprezintă soluția care obține întotdeauna rezultatul corect utilizând algoritmul Held-Karp
+		(Dynamic Programming with Bitmasking), care garantează găsirea ciclului Hamiltonian de cost minim pentru
+		grafuri complete cu până la 20 de noduri. Acest algoritm are complexitatea O(n²·2ⁿ), oferind soluția optimă
+		într-un timp rezonabil pentru instanțe de dimensiuni moderate.
+	
+	c. TSP_approx.c
+		Acest fișier reprezintă soluția care obține un răspuns apropiat de cel corect și consumă o cantitate
+		rezonabilă de resurse (spațiu/timp) pentru orice instanță a problemei. Este o implementare hibridă care
+		combină mai multe tehnici:
+			- Verificare existență ciclu Hamiltonian: Folosește DFS pentru a detecta dacă graful conține un ciclu
+													  Hamiltonian
+			- Algoritmi de construcție:
+						~ Nearest Neighbor: construiește un tur pornind de la un nod și adăugând mereu cel mai apropiat
+											nod nevizitat
+						~ Simple Insertion: inserează noduri în turul curent în poziția care minimizează creșterea
+											costului
+			- Algoritmul de optimizare 2-OPT: îmbunătățește soluția inițială prin schimbarea sistematică a muchiilor
+											  pentru reducerea costului total
 
 3. Directorul tests/
-a. generate_tests.py
-	Acest script Python generează 34 de teste cu caracteristici diverse, detaliate individual în ultima parte a
-	README-ului. Fiecare test este generat cu parametri controlați (seed-uri fixe pentru reproducibilitate) și
-	salvat în formatul specificat.
-
-b. run_tests.sh
-	Acest fișier reprezintă scriptul de testare, care compilează automat ambele programe, rulează fiecare test
-	prin ambele implementări(exactă și aproximativă), implementează timeout (10 secunde pentru soluția exactă,
-	5 secunde pentru cea aproximativă), compară rezultatele și afișează un tabel sumar care include:
-		- numărul testului
-		- costul soluției exacte
-		- costul soluției aproximative
-		- raportul aproximativ/exact (ratio)
-		- indicarea "Match" pentru rezultate identice sau "Different" pentru rezultate divergente
-
-c. directorul input/
-	Acesta conține fișierele .in generate de generate_tests.py
-
-d. output_exact/
-	Acesta conține rezultatele produse de algoritmul Held-Karp
-
-e. output_approx/
-	Acesta conține rezultatele produse de algoritmul aproximativ
+	a. generate_tests.py
+		Acest script Python generează 34 de teste cu caracteristici diverse, detaliate individual în ultima parte a
+		README-ului. Fiecare test este generat cu parametri controlați (seed-uri fixe pentru reproducibilitate) și
+		salvat în formatul specificat.
+	
+	b. run_tests.sh
+		Acest fișier reprezintă scriptul de testare, care compilează automat ambele programe, rulează fiecare test
+		prin ambele implementări(exactă și aproximativă), implementează timeout (10 secunde pentru soluția exactă,
+		5 secunde pentru cea aproximativă), compară rezultatele și afișează un tabel sumar care include:
+			- numărul testului
+			- costul soluției exacte
+			- costul soluției aproximative
+			- raportul aproximativ/exact (ratio)
+			- indicarea "Match" pentru rezultate identice sau "Different" pentru rezultate divergente
+	
+	c. directorul input/
+		Acesta conține fișierele .in generate de generate_tests.py
+	
+	d. output_exact/
+		Acesta conține rezultatele produse de algoritmul Held-Karp
+	
+	e. output_approx/
+		Acesta conține rezultatele produse de algoritmul aproximativ
 
 4. Prezentul README.md
 
