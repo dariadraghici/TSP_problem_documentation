@@ -4,7 +4,7 @@ Acest README.md conține prezentarea generală a structurii arhivei. Acest READM
 3. Surse externe și referințe
 4. Detaliera individuală a alegerii testelor
 
-		Prezentarea conținutul repositoriului
+		Prezentarea conținutului repositoriului
 
 Prezenta arhivă conține o implementare completă pentru rezolvarea Problemei Comis-voiajorului (TSP), 
 incluzând atât o soluție exactă, cât și o soluție aproximativă. Structura proiectului este următoarea:
