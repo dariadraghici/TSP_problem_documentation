@@ -58,11 +58,11 @@ incluzând atât o soluție exactă, cât și o soluție aproximativă. Structur
 		Acest fișier reprezintă scriptul de testare, care compilează automat ambele programe, rulează fiecare test
 		prin ambele implementări(exactă și aproximativă), implementează timeout (10 secunde pentru soluția exactă,
 		5 secunde pentru cea aproximativă), compară rezultatele și afișează un tabel sumar care include:
-			- numărul testului
-			- costul soluției exacte
-			- costul soluției aproximative
-			- raportul aproximativ/exact (ratio)
-			- indicarea "Match" pentru rezultate identice sau "Different" pentru rezultate divergente
+	- numărul testului
+	- costul soluției exacte
+	- costul soluției aproximative
+	- raportul aproximativ/exact (ratio)
+	- indicarea "Match" pentru rezultate identice sau "Different" pentru rezultate divergente
 	
 	c. directorul input/
 		Acesta conține fișierele .in generate de generate_tests.py
