@@ -79,25 +79,25 @@ e. output_approx/
 
 		Instrucțiuni de evaluare
 
-1. Compilare
+a. Compilare
 	cd src
 	make
 
-2. Generare teste
+b. Generare teste
 	make generate-tests
 	# SAU
 	cd tests
 	python3 generate_tests.py
 
-3. Rulare teste
+c. Rulare teste
 	make test
 	# SAU
 	cd tests
 	./run_tests.sh
 
-4. Clean
-make clean          # Șterge executabilele și output-urile testelor
-make clean-tests    # Șterge toate testele generate (input + output)
+d. Clean
+	make clean          # Șterge executabilele și output-urile testelor
+	make clean-tests    # Șterge toate testele generate (input + output)
 
 
 		Surse externe și referințe
