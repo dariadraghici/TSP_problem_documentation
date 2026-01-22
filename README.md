@@ -4,7 +4,7 @@ Acest README.md conține prezentarea generală a structurii arhivei. Acest READM
 3. Surse externe și referințe
 4. Detaliera individuală a alegerii testelor
 
-- - - - - - - - - - - - - - - - - - - - - - Prezentarea conținutul arhivei- - - - - - - - - - - - - - - - - - - - - - 
+		Prezentarea conținutul arhivei
 
 Prezenta arhivă conține o implementare completă pentru rezolvarea Problemei Comis-voiajorului (TSP), 
 incluzând atât o soluție exactă, cât și o soluție aproximativă. Structura proiectului este următoarea:
@@ -77,8 +77,7 @@ e. output_approx/
 
 4. Prezentul README.md
 
-
-- - - - - - - - - - - - - - - - - - - - - - Instrucțiuni de evaluare - - - - - - - - - - - - - - - - - - - - - - 
+		Instrucțiuni de evaluare
 
 1. Compilare
 	cd src
@@ -101,7 +100,7 @@ make clean          # Șterge executabilele și output-urile testelor
 make clean-tests    # Șterge toate testele generate (input + output)
 
 
-- - - - - - - - - - - - - - - - - - - - - - Surse externe și referințe- - - - - - - - - - - - - - - - - - - - - - 
+		Surse externe și referințe
 
 Pentru implementarea algoritmilor și structurarea soluțiilor, au fost consultate următoarele resurse tehnice și
 teoretice:
@@ -129,7 +128,7 @@ teoretice:
    - Descriere: Gestionarea pointerilor la fișiere și parsarea eficientă a input-ului.
 
 
-- - - - - - - Justificarea setului exhaustiv de teste pentru problema TSP (Travelling salesman problem) - - - - - - -
+			Justificarea setului exhaustiv de teste pentru problema TSP (Travelling salesman problem)
 
 	În continuare se găsește explicația pentru fiecare test din setul exhaustiv de teste pentru problema
 Traveling Salesman Problem (TSP). Setul acoperă toate scenariile posibile, de la cazuri simple la edge 
