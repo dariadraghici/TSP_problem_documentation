@@ -21,14 +21,12 @@ incluzând atât o soluție exactă, cât și o soluție aproximativă. Structur
 2. Directorul src/
 	a. Makefile
 		Acest fișier reprezintă sistemul de build și automatizare definește următoarele reguli esențiale:
-			- all: compilează ambele soluții (exactă și aproximativă)
-			- TSP_exact și TSP_approx: reguli individuale pentru construcția fiecărui executabil
-			- clean: șterge executabilele și conținutul folderelor output_exact și output_approx din
-					 directorul tests/, păstrând structura directoarelor
-			- clean-tests: Șterge complet toate testele generate, inclusiv fișierele de input și output-urile
-						   asociate
-			- test: Rulează întreaga suită de teste utilizând scriptul run_tests.sh situat în directorul tests/
-			- generate-tests: Generează automat testele de intrare folosind scriptul Python din directorul tests/
+	- all: compilează ambele soluții (exactă și aproximativă)
+	- TSP_exact și TSP_approx: reguli individuale pentru construcția fiecărui executabil
+	- clean: șterge executabilele și conținutul folderelor output_exact și output_approx din directorul tests/, păstrând structura directoarelor
+	- clean-tests: Șterge complet toate testele generate, inclusiv fișierele de input și output-urile asociate
+	- test: Rulează întreaga suită de teste utilizând scriptul run_tests.sh situat în directorul tests/
+	- generate-tests: Generează automat testele de intrare folosind scriptul Python din directorul tests/
 	
 	b. TSP_exact.c
 			Acest fișier reprezintă soluția care obține întotdeauna rezultatul corect utilizând algoritmul Held-Karp
